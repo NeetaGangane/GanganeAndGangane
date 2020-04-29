@@ -47,5 +47,23 @@ public class PaymentController {
 		return null;
 			
 	}
+	
+	@RequestMapping(value="/getPaymentHistoryByDate",method= {RequestMethod.POST})
+	public List<LabourPayment>  readPaymentHistoryOfLabourByDate(HttpServletRequest request) {
+		
+		JSONObject jObject;
+		try {
+			jObject = Utility.extractJsonFromRequest(request);
+			Long fromDateLong = jObject.getLong("fromDate");
+			Long toDateLong = jObject.getLong("toDate");
+			
+				
+			
+		} catch (Exception e) {
+			e.printStackTrace();
+		}
+		return null;
+			
+	}
 
 }
