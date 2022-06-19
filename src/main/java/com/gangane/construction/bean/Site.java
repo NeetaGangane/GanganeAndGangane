@@ -9,8 +9,9 @@ import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
+import javax.persistence.Table;
 
-
+@Table
 @Entity(name="site")
 public class Site implements Serializable {
 
@@ -40,7 +41,7 @@ public class Site implements Serializable {
 	private String builderName;
 	
 	@Column(name="builder_phone")
-	private Integer builderPhone;
+	private String builderPhone;
 	
 	@Column(name="engineer_name")
 	private String engineerName;
@@ -54,7 +55,7 @@ public class Site implements Serializable {
 	@Column(name="supervisor_phone")
 	private String supervisorPhone;
 	
-	@Column(name="site_web_site")
+	@Column(name="site_website")
 	private String siteWebsite;
 	
 	@Column(name="status")
@@ -108,11 +109,11 @@ public class Site implements Serializable {
 		this.builderName = builderName;
 	}
 
-	public Integer getBuilderPhone() {
+	public String getBuilderPhone() {
 		return builderPhone;
 	}
 
-	public void setBuilderPhone(Integer builderPhone) {
+	public void setBuilderPhone(String builderPhone) {
 		this.builderPhone = builderPhone;
 	}
 

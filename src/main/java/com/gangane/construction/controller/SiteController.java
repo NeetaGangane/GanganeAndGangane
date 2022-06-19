@@ -7,6 +7,7 @@ import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
+import org.springframework.web.bind.annotation.RestController;
 
 import com.gangane.construction.bean.Address;
 import com.gangane.construction.bean.Site;
@@ -14,7 +15,7 @@ import com.gangane.construction.repositories.SiteRepository;
 import com.gangane.construction.services.SiteService;
 import com.gangane.construction.util.Constants;
 
-@Controller
+@RestController
 public class SiteController {
 	
 	@Autowired
@@ -28,9 +29,9 @@ public class SiteController {
 	 * reads all sites where status is not a deleted 
 	 */
 	@RequestMapping(value="/readAllSites", produces = "application/json",method = RequestMethod.GET)
-	public List<Site> readAllSites() {
+	public Iterable<Site> readAllSites() {
 		
-		return siteRepository.findAllNonDeletedSite(Constants.SITE_STATUS_DELETED);
+		return  siteRepository.findAll();//NonDeletedSite(Constants.SITE_STATUS_DELETED);
 	}
 	
 	@RequestMapping(value="/saveNewSite", produces = "application/json",method = RequestMethod.GET)

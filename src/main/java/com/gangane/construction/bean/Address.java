@@ -39,9 +39,6 @@ public class Address implements Serializable {
 	
 	@Column(name="district")
 	private String district;
-	
-	@Column(name="address_id")
-	private Integer addressId;
 
 	public int getId() {
 		return id;
@@ -99,15 +96,6 @@ public class Address implements Serializable {
 		this.district = district;
 	}
 
-	public Integer getAddressId() {
-		return addressId;
-	}
-
-	public void setAddressId(Integer addressId) {
-		this.addressId = addressId;
-	}
-	
-	
 	
 	
 	

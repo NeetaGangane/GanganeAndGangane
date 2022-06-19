@@ -55,7 +55,7 @@ public class Labour implements Serializable {
 	@Column(name="status")
 	private String status;
 	
-	@Column(name="addressId")
+	@Column(name="address_id")
 	private Integer addressId;
 	
 

@@ -10,7 +10,7 @@ import com.gangane.construction.bean.Site;
 
 public interface SiteRepository extends CrudRepository<Site, Integer> {
 	
-	@Query("from Site s where s.status <> :deletedStatus")
+	/*@Query("from Site s where s.status <> :deletedStatus")
 	public List<Site> findAllNonDeletedSite(@Param("deletedStatus") String deletedStatus);
-
+*/
 }

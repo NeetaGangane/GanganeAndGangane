@@ -23,7 +23,8 @@ public class PaymentService {
 	 * PaymentHistory return rows 5 or 10
 	 */
 	public List<LabourPayment> readLabourPaymentHistoryByLabourId(Integer labourId,int rowCount) {
-		return paymentRepository.findPaymentHistorylastNRecords(labourId, rowCount);
+		//return paymentRepository.findPaymentHistorylastNRecords(labourId, rowCount);
+		return paymentRepository.findLabourPaymentByLabourId(labourId);
 	}
 	
 	/*
@@ -31,8 +32,8 @@ public class PaymentService {
 	 * PaymentHistory of current month starting 1st day
 	 */
 	public List<LabourPayment> readLabourPaymentHistoryByLabourId(Integer labourId) {
-			 		 
-		return paymentRepository.findPaymentHistoryFromCriteriaDate(labourId, Utility.getFirsDateOfTheMonth());
+		return null;
+		//return paymentRepository.findPaymentHistoryFromCriteriaDate(labourId, Utility.getFirsDateOfTheMonth());
 	}
 	
 	/*
@@ -40,7 +41,8 @@ public class PaymentService {
 	 * PaymentHistory of of given date period
 	 */
 	public List<LabourPayment> readLabourPaymentHistoryByLabourId(Date startDate,Date endDate,Integer labourId) {
-		return paymentRepository.findPaymentHistoryWithDateRange(labourId, startDate, endDate);
+		//return paymentRepository.findPaymentHistoryWithDateRange(labourId, startDate, endDate);
+		return null;
 	}
 	
 	public void savePaymentDetails(LabourPayment labourPayment,Integer loggedInUser){
